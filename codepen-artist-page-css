@@ -1,0 +1,277 @@
+body{
+  
+  background-color: #263238;
+  text-align: center;
+  color: white;
+  font-family: gillsans;
+  
+}
+
+.parent{
+display: grid;
+grid-gap: 10px;
+grid-template-columns: repeat(5, 1fr);
+grid-template-rows: repeat(5, 1fr);
+
+  
+}
+
+.div1{
+  height: 400px;
+  width: 600px;
+  background-color: white;
+  border: 1px solid black;
+  grid-area: 2 / 2 / 3 / 3; 
+  color: white;
+  font-size: 30px;
+  background-image: url('http://t3.gstatic.com/licensed-image?q=tbn:ANd9GcTmC5xi3BEkioTPO439yt8hXRNQroJZoGEma6XfYvQyp2leDp2JLUWfWuvYxKl2wV0FfyQxcGk-6IMNRXE');
+  background-size: cover;
+  cursor: pointer;
+  border-radius: 50px;
+  
+}
+/* Hover effect for box number one */
+.div1:hover{
+border: 5px solid #00E676;
+  transition: ease-in 0.5s;
+ 
+}
+
+.div2{
+  height: 400px;
+  width: 600px;
+  background-color: white;
+  border: 1px solid black;
+  grid-area: 2 / 3 / 3 / 4;
+   background-image: url('https://i.scdn.co/image/ab6761610000e5eb8c96f43e79042b5255ef98cf');
+  background-size: cover;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  border-radius: 50px;
+  
+}
+/* Hover effect for box number one */
+.div2:hover{
+border: 5px solid #00E676;
+transition: ease-in 0.5s;
+box-shadow: 3px, 3px, 3px, 5px  solid #37474F;
+}
+
+.div3{
+   height: 400px;
+  width: 600px;
+  background-color: white;
+  border: 1px solid black;
+  grid-area: 2 / 4 / 3 / 5;
+   background-image: url('https://images.complex.com/complex/images/c_scale,f_auto,q_auto,w_1920/fl_lossy,pg_1/wawv3otoplzpbvzjqdau/rick-ross-complex-interview-1?fimg-ssr-default');
+  background-size: cover;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  border-radius: 50px;
+  
+}
+/* Hover effect for box number one */
+.div3:hover{
+border: 5px solid #00E676;
+  transition: ease-in 0.5s;}
+
+.div4{
+  height: 400px;
+  width: 600px;
+  background-color: white;
+  border: 1px solid black;
+  grid-area: 3 / 4 / 4 / 5; 
+   background-image: url('https://nationaltoday.com/wp-content/uploads/2022/06/23-Jim-Jones.jpg');
+  background-size: cover;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  border-radius: 50px;
+  
+}
+/* Hover effect for box number two */
+.div4:hover{
+border: 5px solid #00E676;
+  transition: ease-in 0.5s;;
+}
+
+.div5{
+  height: 400px;
+  width: 600px;
+  background-color: white;
+  border: 1px solid black;
+  grid-area: 3 / 3 / 4 / 4; 
+  background-image: url('https://media.gq-magazine.co.uk/photos/5d13a9db3b385369a70e9964/master/pass/dave-hp-gq-26nov18_b.jpg');
+  background-size: cover;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  border-radius: 50px;
+}
+/* Hover effect for box number three */
+.div5:hover{
+border: 5px solid #00E676;
+  transition: ease-in 0.5s;
+}
+
+.div6{
+  height: 400px;
+  width: 600px;
+  background-color: white;
+  border: 1px solid black;
+  grid-area: 3 / 2 / 4 / 3;
+   background-image: url('https://media.pitchfork.com/photos/619546f0061137443e894aec/1:1/w_1000,h_1000,c_limit/Cardi-B.jpg');
+  background-size: cover;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  border-radius: 50px;
+}
+/* Hover effect for box number one */
+.div6:hover{
+border: 5px solid #00E676;
+  transition: ease-in 0.5s;
+}
+
+.div7{
+  height: 400px;
+  width: 600px;
+  background-color: white;
+  border: 1px solid black;
+  grid-area: 4 / 2 / 5 / 3; 
+   background-image: url('https://booker-dominique.s3.amazonaws.com/library/9409/20200911_123402460_M.JPG');
+  background-size: cover;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  border-radius: 50px;
+}
+/* Hover effect for box number one */
+.div7:hover{
+border: 5px solid #00E676;
+  transition: ease-in 0.5s;
+}
+
+.div8{
+  height: 400px;
+  width: 600px;
+  background-color: white;
+  border: 1px solid black;
+  grid-area: 4 / 3 / 5 / 4;
+   background-image: url('https://live-production.wcms.abc-cdn.net.au/75483705c39d5d9ec102923b789ce771?impolicy=wcms_crop_resize&cropH=562&cropW=1000&xPos=0&yPos=0&width=862&height=485');
+  background-size: cover;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  border-radius: 50px;
+}
+/* Hover effect for box number one */
+.div8:hover{
+border: 5px solid #FF4081;
+  transition: ease-in 0.5s;
+}
+
+.div9{
+  height: 400px;
+  width: 600px;
+  background-color: white;
+  border: 1px solid black;
+ grid-area: 4 / 4 / 5 / 5; 
+   background-image: url('https://assets.capitalxtra.com/2017/49/stefflon-don-press-image-1512483344-view-1.png');
+  background-size: cover;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  border-radius: 50px;
+}
+/* Hover effect for box number one */
+.div9:hover{
+border: 5px solid #00E676;
+  transition: ease-in 0.5s;
+}
+
+
+
+.icons{
+ display: flex;
+  float: left;
+  padding: 10px;
+  gap: 15em;
+}
+.icon1{
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  background-color: white;
+  border: 1px solid black;
+  background-image: url('https://live-production.wcms.abc-cdn.net.au/75483705c39d5d9ec102923b789ce771?impolicy=wcms_crop_resize&cropH=562&cropW=1000&xPos=0&yPos=0&width=862&height=485'); 
+  background-size: cover;
+  background-position: -50px;
+}
+.icon1:hover{
+  scale: 2;
+  transition: ease 1s;
+  cursor: pointer;
+  border: 3px solid #00E676;
+}
+.icon2{
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  background-color: white;
+   border: 1px solid black;
+   background-image: url('https://assets.capitalxtra.com/2017/49/stefflon-don-press-image-1512483344-view-1.png');
+  background-size: cover;
+  
+}
+.icon2:hover{
+  scale: 2;
+  transition: ease 1s;
+  cursor: pointer;
+  border: 3px solid #00E676;
+}
+.icon3{
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  background-color: white;
+  border: 1px solid black;
+  background-image:url('https://media.pitchfork.com/photos/619546f0061137443e894aec/1:1/w_1000,h_1000,c_limit/Cardi-B.jpg');
+  background-size: cover;
+  
+  
+}
+.icon3:hover{
+  scale: 2;
+  transition: ease 1s;
+  cursor: pointer;
+  border: 3px solid #00E676;
+}
+
+span{
+ font-size: 50px;
+  position-top: 60px;
+}
+
+p{
+  font-size: 20px;
+}
+
+
+.icon {
+  width: 200px; /* set the width of the image */
+  height: 200px; /* set the height of the image */
+  border: 1px solid #ccc; /* add a border to the image */
+  border-radius: 50%; /* round the corners of the image */
+}
+
+.icons {
+  display: flex; /* use flex layout to align the images horizontally */
+  align-items: center; /* center the images vertically */
+}
+
+.icons span {
+  margin: 0 10px; /* add some space between the images */
+}
