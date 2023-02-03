@@ -1,0 +1,53 @@
+<style>
+.hidden {
+  display: none;
+}
+</style>
+
+<div class="parent">
+  <div class="div1 toggle-div" data-div-id="icons1" data-icon-id="icon1" onclick="toggleDiv('icons2', this)" data-src="http://t3.gstatic.com/licensed-image?q=tbn:ANd9GcTmC5xi3BEkioTPO439yt8hXRNQroJZoGEma6XfYvQyp2leDp2JLUWfWuvYxKl2wV0FfyQxcGk-6IMNRXE">Philthy Rich</div>
+  
+  <div class="div2 toggle-div" data-div-id="icons2" data-icon-id="icon2" onclick="toggleDiv('icons2', this)" data-src="https://i.scdn.co/image/ab6761610000e5eb8c96f43e79042b5255ef98cf">Skrapz</div>
+  
+  <div class="div3 toggle-div" data-div-id="icons3" data-icon-id="icon3" onclick="toggleDiv('icons2', this)" data-src="https://images.complex.com/complex/images/c_scale,f_auto,q_auto,w_1920/fl_lossy,pg_1/wawv3otoplzpbvzjqdau/rick-ross-complex-interview-1?fimg-ssr-default">Rick Ross</div>
+  
+  <div class="div4 toggle-div" data-div-id="icons4" data-icon-id="icon4" onclick="toggleDiv('icons2', this)" data-src="https://nationaltoday.com/wp-content/uploads/2022/06/23-Jim-Jones.jpg">Jim Jones</div>
+  
+  <div class="div5 toggle-div" data-div-id="icons5" data-icon-id="icon5" onclick="toggleDiv('icons2', this)" data-src="https://media.gq-magazine.co.uk/photos/5d13a9db3b385369a70e9964/master/pass/dave-hp-gq-26nov18_b.jpg">Dave</div>
+  
+  <div class="div6 toggle-div" data-div-id="icons6" data-icon-id="icon6" onclick="toggleDiv('icons2', this)" data-src="https://media.pitchfork.com/photos/619546f0061137443e894aec/1:1/w_1000,h_1000,c_limit/Cardi-B.jpg">Cardi B</div>
+  
+  <div class="div7 toggle-div" data-div-id="icons7" data-icon-id="icon7" onclick="toggleDiv('icons2', this)" data-src="https://booker-dominique.s3.amazonaws.com/library/9409/20200911_123402460_M.JPG">Fredo</div>
+  
+  <div class="div8 toggle-div" data-div-id="icons8" data-icon-id="icon8" onclick="toggleDiv('icons2', this)" data-src="http://t3.gstatic.com/licensed-image?q=tbn:ANd9GcTmC5xi3BEkioTPO439yt8hXRNQroJZoGEma6XfYvQyp2leDp2JLUWfWuvYxKl2wV0FfyQxcGk-6IMNRXE">Drake</div>
+  
+  <div class="div9 toggle-div" data-div-id="icons9" data-icon-id="icon9" onclick="toggleDiv('icons2', this)" data-src="http://t3.gstatic.com/licensed-image?q=tbn:ANd9GcTmC5xi3BEkioTPO439yt8hXRNQroJZoGEma6XfYvQyp2leDp2JLUWfWuvYxKl2wV0FfyQxcGk-6IMNRXE">Steff London</div>
+</div>
+
+<div id="icons1" class="hidden">
+  <img id="icons1-img" src="" class="icon" alt="Selected artist">
+</div>
+
+<div id="icons2" class="hidden">
+  <img id="icons2-img" src="" class="icon" alt="Selected artist">
+</div>
+</div>
+
+
+<script>
+function toggleDiv(divId, imgElement) {
+  var div = document.getElementById(divId);
+  if (div.style.display === "none") {
+    div.style.display = "block";
+  } else {
+    div.style.display = "none";
+  }
+
+  // Get the image URL from the data-src attribute of the img element
+  var src = imgElement.getAttribute('data-src');
+  // Set the src attribute of the icons img element to the image URL
+  document.getElementById(divId + '-img').src = src;
+}
+</script>
+
+
