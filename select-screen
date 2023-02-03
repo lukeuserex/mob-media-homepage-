@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Artist Selector</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="select-screen.css">
+    <script src="select-screen.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/spotify-web-api-js/2.2.0/spotify-web-api.min.js"></script>
+
+
+</head>
+
+<body>
+	<a href="producers">Producers</a>
+	<a href="Directors">Directors</a>
+	<h1 class="mob">MOB MEDIA</h1>
+	<h1>Select up to 3 artists for your record:</h1>
+
+	<div class="artists">
+		<div class="artist" data-name="Artist 1">
+			<img src="http://t3.gstatic.com/licensed-image?q=tbn:ANd9GcTmC5xi3BEkioTPO439yt8hXRNQroJZoGEma6XfYvQyp2leDp2JLUWfWuvYxKl2wV0FfyQxcGk-6IMNRXE" alt="Artist 1">
+			<p>Philthy Rich</p>
+		</div>
+		<div class="artist" data-name="Artist 2">
+			<img src="https://i.scdn.co/image/ab6761610000e5eb8c96f43e79042b5255ef98cf" alt="Artist 2">
+			<p>Skrapz</p>
+		</div>
+		<div class="artist" data-name="Artist 3">
+			<img src="https://images.complex.com/complex/images/c_scale,f_auto,q_auto,w_1920/fl_lossy,pg_1/wawv3otoplzpbvzjqdau/rick-ross-complex-interview-1?fimg-ssr-default" alt="Artist 3">
+			<p>Rick Ross</p>
+		</div>
+		<div class="artist" data-name="Artist 4">
+			<img src="https://nationaltoday.com/wp-content/uploads/2022/06/23-Jim-Jones.jpg" alt="Artist 4">
+			<p>Jim Jones</p>
+		</div>
+		<div class="artist" data-name="Artist 5">
+			<img src="https://media.gq-magazine.co.uk/photos/5d13a9db3b385369a70e9964/master/pass/dave-hp-gq-26nov18_b.jpg" alt="Artist 5">
+			<p>Dave</p>
+		</div>
+	</div>
+
+	<div class="selected-artists">
+		<h2>Selected Artists:</h2>
+		<div class="selected-artist-container">
+		</div>
+	</div>
+	<div class="folder">
+		<i class="material-icons folder-icon">folder</i>
+	</div>
+	<button id="back-button">Back</button>
+
+	<button id="submit-button">Submit</button>
+	</div>
+
+	<script src="https://cdn.skypack.dev/jquery@3.6.3"></script>
+	
+
+</html>
