@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+	<script src="https://togetherjs.com/togetherjs-min.js"></script>
+	<script src="app.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/spotify-web-api-js/2.2.0/spotify-web-api.min.js"></script>
+
+	
+	<title>Grid panel 2</title>
+</head>
+
+<body>
+
+	<div class="container">
+		<div class="bg1">
+			<h2 class="animate__animated  animate__zoomInDown" style="color: white; font-size: 100px; font-family: heaters">MONEY BAG MEDIA</h2>
+			<p></p>
+		</div>
+
+		<div class="bg1" id="create">
+			<h2><i class="fas fa-plus"></i></h2>
+			<a id="create-new" href="artist.html">Create New</a>
+		
+		</div>
+
+		<div class="bg2" id="Home">
+			<h2><i class="fas fa-home"></i></h2>
+			<p>Home</p>
+		</div>
+		<div class="bg1" id="Music">
+			<h2><i class="fas fa-music"></i></h2>
+			<a href="music.html">Music</a>
+		</div>
+		<div class="bg2" id="Community">
+			<h2><i class="fas fa-users"></i></h2>
+			<a href="community.html" id="Community">Community</a>
+			
+		</div>
+		<div class="bg2" id="Videos">
+			<h2><i class="fas fa-video"></i></h2>
+			<a href="videos.html" id="Videos">Videos</a>
+		</div>
+		<div class="bg2" id="Artist">
+			<h2></h2>
+			<a href="artist.html" id="Artist">Artist</a>
+	
+		</div>
+
+		<div class="bg2" id="Producers">
+			<h2><i class="fas fa-speakers"></i></h2>
+			<a href="producers.html" id="Producers">Producers</a>
+		</div>
+		<div class="bg2" id="Directors">
+			<h2></h2>
+			<a href="directors.html" id="Directors">Directors</a>
+		</div>
+		<div class="bg2" id="Movies">
+			<h2></h2>
+			<a href="movies.html" id="Movies">Movies</a>
+		</div>
+		<div class="bg2" id="Events">
+			<h2></h2>
+			<a href="experience.html" id="Experience">Experiance</a>
+		</div>
+		<div class="bg2" id="Clothing">
+			<h2></h2>
+			<a href="clothingstore.html" id="Clothing">Clothing Store</a>
+		</div>
+		<button onclick="TogetherJS(this); return false;">Start TogetherJS</button>
+
+		<ul>
+			<ul>About</ul>
+			<ul>Contact us</ul>
+			<ul>Terms & Conditions</ul>
+		
+		</ul>
+
+</body>
+
+</html>
