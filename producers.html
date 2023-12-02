@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="animate.min.css">
+  <script src="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
+  <script src="index.js"></script>
+  <title>MOB Producers Directory</title>
+
+  <style>
+    /* CSS styles for the headings */
+    .title {
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: 20px;
+      color: red;
+    }
+
+    /* Define the grid container */
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      gap: 20px;
+      max-width: 600px;
+      padding: 20px;
+      grid-template-areas:
+        "heading heading heading heading"
+        "card1 card2 card3 card4"
+        "card5 card6 card7 card8"
+        "card9 card10 card11 card12"
+        "card13 card14 card15 card16";
+    }
+
+    /* Define the card styles */
+    .card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      transition: box-shadow 0.3s;
+      width: 200px; /* Adjust card width */
+      height: 200px; /* Adjust card height */
+    }
+
+    /* Add hover effect to the cards */
+    .card:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transform: scale(1.2);
+      transition: 0.5s ease-in;
+    }
+
+    /* Position the selected artist section on the left */
+    .selected-artist {
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      transform: translateY(-50%);
+    }
+
+    /* Style the bio box */
+    .bio-box {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      text-align: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+
+    /* Show the bio box when the card is double-clicked or hovered with a delay */
+    .card:hover .bio-box,
+    .card.double-click .bio-box {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    #timebrland{
+        background-image: url('https://ew.com/thmb/MkfaKmlHlwP5cimN4tV75nP2yu0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/timbaland-photo-credit-eric-ray-davis-1-2000-0a564ac979824773b6949e186dd0a469.jpg');
+    }
+
+    #kanye{
+        background-image: url(');
+    }
+
+    #m1{
+        background-image: url('https://ew.com/thmb/MkfaKmlHlwP5cimN4tV75nP2yu0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/timbaland-photo-credit-eric-ray-davis-1-2000-0a564ac979824773b6949e186dd0a469.jpg');
+    }
+
+    #steelBangles{
+        background-image: url('https://ew.com/thmb/MkfaKmlHlwP5cimN4tV75nP2yu0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/timbaland-photo-credit-eric-ray-davis-1-2000-0a564ac979824773b6949e186dd0a469.jpg');
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="title">MONEY BAG MEDIA</h1>
+
+  <h3 id="Artist-Directory">producer Directory</h3>
+
+  <div class="grid-container">
+    <!-- Cards choose artist -->
+    <div class="card" id="timberland" data-bio="timberland" data-artist="timberland">Timberland</div>
+    <div class="card" id="kanye" data-bio="kanye" data-artist="Kanye">Kanye West </div>
+    <div class="card" id="m1" data-bio="m1" data-artist="m1">m1 on the beat</div>
+    <div class="card" id="steelBangles" data-bio="steelBangles" data-artist="steelBangles">Steel Bangles</div>
+    <div class="card" id="two" data-bio="Fredo" data-artist="Fredo">Fredo</div>
+    <div class="card" id="three" data-bio="Eminem" data-artist="Eminem">Eminem</div>
+    <div class="card" id="one" data-bio="Rick Ross" data-artist="Rick-Ross">Rick Ross</div>
+    <div class="card" id="two" data-bio="Fredo" data-artist="Fredo">Fredo</div>
+    <div class="card" id="three" data-bio="Eminem" data-artist="Eminem">Eminem</div>
+    <!-- Add other cards here... -->
+  </div>
+
+  <div class="selected-artist">
+    <h1>Selected Producer</h1>
+    <div class="selected-one"></div>
+    <span>+</span>
+    <div class="selected-two"></div>
+    <span>+</span>
+    <div class="selected-three"></div>
+    <a class="animate__animated animate__bounce" id="publish-button" href="realvotepage.html">Publish</a>
+    <i class="material-icons">folder</i>
+    <button>Delete</button>
+    <i class="material-icons">delete</i>
+  </div>
+
+  <!-- Hidden bio box for displaying the artist's bio -->
+  <div class="bio-box"></div>
+
+  <script>
+    // Your JavaScript code here...
+  </script>
+</body>
+
+</html>

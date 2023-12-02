@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="animate.min.css">
+  <script src="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
+  <script src="index.js"></script>
+  <title>MOB Directors directory</title>
+
+  <style>
+    /* CSS styles for the headings */
+    .title {
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: 20px;
+      color: red;
+    }
+
+    /* Define the grid container */
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      gap: 20px;
+      max-width: 600px;
+      padding: 20px;
+      grid-template-areas:
+        "heading heading heading heading"
+        "card1 card2 card3 card4"
+        "card5 card6 card7 card8"
+        "card9 card10 card11 card12"
+        "card13 card14 card15 card16";
+    }
+
+    /* Define the card styles */
+    .card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      transition: box-shadow 0.3s;
+      width: 200px; /* Adjust card width */
+      height: 200px; /* Adjust card height */
+    }
+
+    /* Add hover effect to the cards */
+    .card:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transform: scale(1.2);
+      transition: 0.5s ease-in;
+    }
+
+    /* Position the selected artist section on the left */
+    .selected-artist {
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      transform: translateY(-50%);
+    }
+
+    /* Style the bio box */
+    .bio-box {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      text-align: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+
+    /* Show the bio box when the card is double-clicked or hovered with a delay */
+    .card:hover .bio-box,
+    .card.double-click .bio-box {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  </style>
+
+  <title>Money Bag Media test site</title>
+</head>
+
+<body>
+  <h1 class="title">MONEY BAG MEDIA</h1>
+
+  <h3 #id="Artist-Directory">Directors Directory</h3>
+
+  <div class="grid-container">
+    <!-- Cards choose artist -->
+    <div class="card" id="one" data-bio="Rick Ross" data-artist="Rick-Ross">Rick Ross</div>
+    <div class="card" id="two" data-bio="Fredo" data-artist="Fredo">Fredo</div>
+    <div class="card" id="three" data-bio="Eminem" data-artist="Eminem">Eminem</div>
+    <div class="card" id="four" data-bio="Dave" data-artist="Dave">Dave</div>
+    <div class="card" id="five" data-bio="NORE" data-artist="Nore">NORE</div>
+    <div class="card" id="six" data-bio="J Hus" data-artist="J-Hus">J Hus</div>
+    <div class="card" id="seven" data-bio="Jay Z" data-artist="Jay-Z">Jay Z</div>
+    <div class="card" id="eight" data-bio="Skepta" data-artist="Skepta">Skepta</div>
+    <div class="card" id="nine" data-bio="Asap rocky" data-artist="AsapRocky">Asap rocky</div>
+    <div class="card" id="ten" data-bio="Nines" data-artist="Nines">Nines</div>
+    <div class="card" id="eleven" data-bio="Fat Joe" data-artist="FatJoe">Fat Joe</div>
+    <div class="card" id="twelve" data-bio="Ice Spice" data-artist="IceSpice">Ice Spice</div>
+    <div class="card" id="thirteen" data-bio="Trapstar Toxic" data-artist="TrapstarToxic">Trapstar Toxic</div>
+    <div class="card" id="fourteen" data-bio="Miss Banks" data-artist="MissBanks">Miss Banks</div>
+    <div class="card" id="fifteen" data-bio="Nicki Minaj" data-artist="NickiMinaj">Nicki Minaj</div>
+    <div class="card" id="sixteen" data-bio="Steff London" data-artist="SteffLondon">Steff London</div>
+  </div>
+
+  <div class="selected-artist">
+    <h1>Selected Director</h1>
+    <div class="selected-one"></div>
+    <span>+</span>
+    <div class="selected-two"></div>
+    <span>+</span>
+    <div class="selected-three"></div>
+    <a class="animate__animated animate__bounce" id="publish-button" href="realvotepage.html">Publish</a>
+    <i class="material-icons">folder</i>
+    <button>Delete</button>
+    <i class="material-icons">delete</i>
+  </div>
+
+  <!-- Hidden bio box for displaying the artist's bio -->
+  <div class="bio-box"></div>
+
+  <script>
+      $(document).ready(function() {
+    $('#submit-link').click(function(e) {
+      e.preventDefault();
+
+      // Get the selected artists
+      var selectedArtists = [];
+      $('.selected-artist div').each(function() {
+        var artistName = $(this).text();
+        selectedArtists.push(artistName);
+      });
+
+      // Send the data to the vote page
+      $.ajax({
+        type: 'POST', // Use POST or GET based on your requirements
+        url: 'votepage2.html', // Replace with the correct URL of the vote page
+        data: { artists: selectedArtists },
+        success: function(response) {
+          // Handle the response from the vote page if needed
+          console.log('Data sent successfully.');
+        },
+        error: function(xhr, status, error) {
+          // Handle errors here
+          console.error('Error:', error);
+        }
+      });
+    });
+  });
+  </script>
+</body>
+
+</html>
